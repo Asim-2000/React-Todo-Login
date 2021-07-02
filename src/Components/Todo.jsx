@@ -39,3 +39,4 @@ const Todo = ({ text,todo,todos,setTodos,isAdmin}) => {
 }
 
 export default Todo;
+
