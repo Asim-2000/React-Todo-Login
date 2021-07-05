@@ -11,7 +11,7 @@ const TodoList = ({ todos, setTodos, filteredTodos,isAdmin}) => {
           (filteredTodos.map((todo) => (
               todo.text.trim()!==""&&
               <Todo
-                isAdmin={isAdmin}
+              isAdmin={isAdmin}
               key={todo.id}
               text={todo.text}
               todos={todos}

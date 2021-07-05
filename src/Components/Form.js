@@ -23,7 +23,7 @@ const Form = ({ setInputText, setTodos, todos, inputText,setStatus,isAdmin }) =>
   return (
     <form onSubmit={SubmitHandler}>
       {!isAdmin && (
-        <div>
+        <div className="warapper">
           <input
             value={inputText}
             onChange={inputTextHandler}

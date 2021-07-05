@@ -5,10 +5,8 @@ import Header from './Components/Header';
 import TodoList from './Components/TodoList';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from './Components/Login';
-import { useHistory} from "react-router-dom";
 
 function App() {
-  let history = useHistory();
 
   const [inputText, setInputText] = useState("");
 
@@ -21,13 +19,18 @@ function App() {
    const [inputpassword, setinputpassword] = useState("");
 
   const [isAdmin, setIsAdmin] = useState(false)
-  const [ redirect,setRedirect] = useState(false)
+  const [redirect, setRedirect] = useState(false)
   
+  
+  
+
    const loginhandler = (e) => {
      e.preventDefault();
      if (inputName === "asim" && inputpassword === "asim") {
        //redirected to App.js
-        setRedirect(true)
+      setIsAdmin(false)
+      setRedirect(true)
+       
       //  return <Redirect to="/todo" true/>;
      }
      else if (inputName === "admin" && inputpassword === "admin") {
@@ -37,7 +40,7 @@ function App() {
       //  return <Redirect to="/todo" true/>
      }
      else {
-       alert("error")
+       alert("Invalid Credentials")
      }
      
    };
@@ -85,7 +88,6 @@ function App() {
       let todolocal = JSON.parse(localStorage.getItem('todos'));
       setTodos(todolocal)
     }
-
   }
 
   return (
