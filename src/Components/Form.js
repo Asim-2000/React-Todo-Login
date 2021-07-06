@@ -1,8 +1,11 @@
 import React from "react";
+import { TextField } from "@material-ui/core";
+import { ButtonGroup, Button,Select,MenuItem } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 
-const Form = ({ setInputText, setTodos, todos, inputText,setStatus,isAdmin }) => {
+const Form = ({ setInputText, setTodos, todos, inputText,setStatus,isAdmin,status }) => {
   const inputTextHandler = (e) => {
-    console.log(e.target.value);
+  
     setInputText(e.target.value);
   };
 
@@ -21,28 +24,28 @@ const Form = ({ setInputText, setTodos, todos, inputText,setStatus,isAdmin }) =>
   }
 
   return (
-    <form onSubmit={SubmitHandler}>
-      {!isAdmin && (
-        <div className="warapper">
-          <input
-            value={inputText}
-            onChange={inputTextHandler}
-            className="todo-input"
-            type="text"
-          />
-          <button className="todo-btn" type="submit">
-            <i className="fa fa-plus-square"></i>
-          </button>
-        </div>
-      )}
-      <div className="select">
-        <select onChange={statusHandler} className="filter-todo" name="todos">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="incompleted">InCompleted</option>
-        </select>
-      </div>
-    </form>
+    <Container maxWidth="xs" >
+      <form onSubmit={SubmitHandler}>
+        {!isAdmin && (
+          <ButtonGroup>
+            <TextField
+              value={inputText}
+              onChange={inputTextHandler}
+              type="text"
+              variant="outlined"
+            />
+            <Button className="todo-btn" type="submit">
+              <i className="fa fa-plus-square"></i>
+            </Button>
+            <Select onChange={statusHandler} value={status}>
+              <MenuItem value="all">All</MenuItem>
+              <MenuItem value="completed">Completed</MenuItem>
+              <MenuItem value="incompleted">InCompelete</MenuItem>
+            </Select>
+          </ButtonGroup>
+        )}
+      </form>
+    </Container>
   );
 };
 

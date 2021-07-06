@@ -1,12 +1,12 @@
+import { List,Container } from "@material-ui/core";
 import React from "react";
 import Todo from "./Todo";
 
-const TodoList = ({ todos, setTodos, filteredTodos,isAdmin}) => {
-  console.log(todos);
+const TodoList = ({ todos, setTodos, filteredTodos, isAdmin }) => {
 
   return (
-    <div className="todo-container">
-      <ul className="todo-list">
+    <Container maxWidth="xs">
+      <List>
         {
           (filteredTodos.map((todo) => (
               todo.text.trim()!==""&&
@@ -20,8 +20,8 @@ const TodoList = ({ todos, setTodos, filteredTodos,isAdmin}) => {
             />
           )))
         }
-      </ul>
-    </div>
+      </List>
+    </Container>
   );
 };
 

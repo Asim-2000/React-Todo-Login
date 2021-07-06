@@ -1,24 +1,18 @@
+import { Button } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import React from 'react';
 
 const Header = () => {
-
-
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-10 ">
-            <h1 className="header text-right"> Asim's ToDo List</h1>
-          </div>
-          <div className="col-md-2 pt-5">
-            <a
-              href="/"
-              className="btn btn-danger"
-            >
-              Logout
-            </a>  
-          </div>
-        </div>
-      </div>
+      <Box display="flex" flexDirection="row" justifyContent="center">
+      
+          <h1 className="header text-right"> Asim's ToDo List</h1>
+  
+        
+          <Button href="/" variant="contained" size="small">
+            Logout
+          </Button>
+      </Box>
     );
 }
 

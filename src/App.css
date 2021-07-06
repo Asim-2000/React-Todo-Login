@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -101,7 +101,7 @@ form button:active{
 }
 
 /*CUSTOM SELECTOR */
-select {
+/* select {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
@@ -110,10 +110,10 @@ select {
   box-shadow: none;
   border: 0 !important;
   background-image: none;
-}
+} */
 
 /* Custom Select */
-.select {
+/* .select {
   margin: 1rem;
   position: relative;
   overflow: hidden;
@@ -125,7 +125,7 @@ select {
   width: 12rem;
 }
 /* Arrow */
-.select::after {
+/* .select::after {
   content: "\25BC";
   position: absolute;
   top: 0;
@@ -139,25 +139,25 @@ select {
 
 .login-form{
   display: block;
-}
+} */
 
-.login-form input,.login-form button {
+/* .login-form input,.login-form button {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
   /* border: solid; */
   /* border-radius: 20px; */
-  font-size: 16px;
-}
+  /* font-size: 16px; */
+/* }
 
 .login-container{
   justify-content: center;
   align-items: center;
-}
+} */
 
-.logout-btn{
+/* .logout-btn{
   font-size: 2rem;
   justify-content: center;
   align-items: center;
-}
+}  */
