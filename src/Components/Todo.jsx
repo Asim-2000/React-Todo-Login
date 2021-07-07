@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     "&:active": {
-      backgroundColor: "#ff1744"
+      backgroundColor: theme.palette.secondary.light
     }
   },
   checkbox: {

@@ -5,6 +5,17 @@ import Header from "./Components/Header";
 import TodoList from "./Components/TodoList";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./Components/Login";
+import { createMuiTheme,ThemeProvider } from "@material-ui/core";
+import { orange, red } from "@material-ui/core/colors";
+
+
+const theme = createMuiTheme({
+  palette: {
+    primary: orange,
+    secondary:red
+  }
+})
+
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -89,22 +100,22 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Login
-            alert={alert}
-            redirect={redirect}
-            isAdmin={isAdmin}
-            inputName={inputName}
-            setInputName={setInputName}
-            nameChangeHandler={nameChangeHandler}
-            passwordChangeHandler={passwordChangeHandler}
-            loginhandler={loginhandler}
-          />
-        </Route>
-        <Route path="/todo">
-          <div className="container">
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Login
+              alert={alert}
+              redirect={redirect}
+              isAdmin={isAdmin}
+              inputName={inputName}
+              setInputName={setInputName}
+              nameChangeHandler={nameChangeHandler}
+              passwordChangeHandler={passwordChangeHandler}
+              loginhandler={loginhandler}
+            />
+          </Route>
+          <Route path="/todo">
             <Header />
             <Form
               status={status}
@@ -121,10 +132,10 @@ function App() {
               setTodos={setTodos}
               filteredTodos={filteredTodos}
             />
-          </div>
-        </Route>
-      </Switch>
-    </BrowserRouter>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
