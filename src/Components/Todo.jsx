@@ -1,13 +1,27 @@
-import { Button, ButtonGroup, Container, ListItem } from "@material-ui/core";
+import { Button, ButtonGroup, ListItem, makeStyles } from "@material-ui/core";
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Checkbox from "@material-ui/core/Checkbox";
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
 import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
+import { Typography } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: 10,
+  },
+  btn: {
+    "&:active": {
+      backgroundColor: "#ff1744"
+    }
+  },
+  checkbox: {
+    color:'green'
+  }
+}));
 
 const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
-
-  
+  const classes = useStyles();
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
@@ -24,29 +38,27 @@ const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
         return el;
       })
     );
-
   };
 
   return (
-    <Container maxWidth="xs">
-      <ListItem className={`todo-item ${todo.completed ? "completed" : ""}`}>
-        {text}
-      </ListItem>
+    <ListItem>
       {!isAdmin && (
         <ButtonGroup>
           <Checkbox
+            className={classes.checkbox}
+            edge="start"
             onChange={completeHandler}
             checked={todo.completed}
-            
             icon={<CircleUnchecked />}
             checkedIcon={<CircleCheckedFilled />}
           />
-          <Button onClick={deleteHandler} className="trash-btn">
+          <Button onClick={deleteHandler} className={classes.btn}>
             <DeleteIcon />
           </Button>
         </ButtonGroup>
       )}
-    </Container>
+      <Typography className={classes.root}>{text}</Typography>
+    </ListItem>
   );
 };
 
