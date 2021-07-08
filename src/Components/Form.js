@@ -17,11 +17,11 @@ const Form = ({
   isAdmin,
   status,
 }) => {
-  const inputTextHandler = (e) => {
+  function inputTextHandler(e) {
     setInputText(e.target.value)
   }
 
-  const SubmitHandler = (e) => {
+  function SubmitHandler(e) {
     e.preventDefault()
     setTodos([
       ...todos,
@@ -30,7 +30,7 @@ const Form = ({
     setInputText("")
   }
 
-  const statusHandler = (e) => {
+  function statusHandler(e) {
     setStatus(e.target.value)
   }
 

@@ -38,13 +38,13 @@ export default function TodoPage({ isAdmin }) {
 
   //save to localStorage
 
-  const saveLocalTodos = () => {
+  function saveLocalTodos() {
     localStorage.setItem("todos", JSON.stringify(todos))
   }
 
   //get local todos
 
-  const getLocalTodos = () => {
+  function getLocalTodos() {
     if (localStorage.getItem("todos") !== null) {
       let todolocal = JSON.parse(localStorage.getItem("todos"))
       setTodos(todolocal)

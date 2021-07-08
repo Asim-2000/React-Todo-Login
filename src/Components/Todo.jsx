@@ -29,11 +29,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
   const classes = useStyles()
-  const deleteHandler = () => {
+  function deleteHandler() {
     setTodos(todos.filter((el) => el.id !== todo.id))
   }
 
-  const completeHandler = () => {
+  function completeHandler() {
     setTodos(
       todos.map((el) => {
         if (el.id === todo.id) {
