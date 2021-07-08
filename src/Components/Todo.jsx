@@ -17,8 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   checkbox: {
     color: "green",
-  }
-  
+  },
 }))
 
 const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {

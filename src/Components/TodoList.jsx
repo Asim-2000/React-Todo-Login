@@ -5,9 +5,8 @@ import { makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%"
+    width: "100%",
   },
-
 }))
 
 const TodoList = ({ todos, setTodos, filteredTodos, isAdmin }) => {
