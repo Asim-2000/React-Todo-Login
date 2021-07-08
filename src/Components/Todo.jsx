@@ -1,10 +1,10 @@
-import { Button, ButtonGroup, ListItem, makeStyles } from "@material-ui/core";
-import React from "react";
-import DeleteIcon from "@material-ui/icons/Delete";
-import Checkbox from "@material-ui/core/Checkbox";
-import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked";
-import CircleCheckedFilled from "@material-ui/icons/CheckCircle";
-import { Typography } from "@material-ui/core";
+import { Button, ButtonGroup, ListItem, makeStyles } from "@material-ui/core"
+import React from "react"
+import DeleteIcon from "@material-ui/icons/Delete"
+import Checkbox from "@material-ui/core/Checkbox"
+import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked"
+import CircleCheckedFilled from "@material-ui/icons/CheckCircle"
+import { Typography } from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,19 +12,19 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     "&:active": {
-      backgroundColor: theme.palette.secondary.light
-    }
+      backgroundColor: theme.palette.secondary.light,
+    },
   },
   checkbox: {
-    color:'green'
-  }
-}));
+    color: "green",
+  },
+}))
 
 const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
-  const classes = useStyles();
+  const classes = useStyles()
   const deleteHandler = () => {
-    setTodos(todos.filter((el) => el.id !== todo.id));
-  };
+    setTodos(todos.filter((el) => el.id !== todo.id))
+  }
 
   const completeHandler = () => {
     setTodos(
@@ -33,12 +33,12 @@ const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
           return {
             ...el,
             completed: !el.completed,
-          };
+          }
         }
-        return el;
+        return el
       })
-    );
-  };
+    )
+  }
 
   return (
     <ListItem>
@@ -59,7 +59,7 @@ const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
       )}
       <Typography className={classes.root}>{text}</Typography>
     </ListItem>
-  );
-};
+  )
+}
 
-export default Todo;
+export default Todo

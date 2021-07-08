@@ -1,30 +1,37 @@
-import React from "react";
-import { TextField } from "@material-ui/core";
-import { ButtonGroup,Button,Select,MenuItem } from "@material-ui/core";
-import { Container } from "@material-ui/core";
+import React from "react"
+import { TextField } from "@material-ui/core"
+import { ButtonGroup, Button, Select, MenuItem } from "@material-ui/core"
+import { Container } from "@material-ui/core"
 
-const Form = ({ setInputText, setTodos, todos, inputText,setStatus,isAdmin,status }) => {
+const Form = ({
+  setInputText,
+  setTodos,
+  todos,
+  inputText,
+  setStatus,
+  isAdmin,
+  status,
+}) => {
   const inputTextHandler = (e) => {
-  
-    setInputText(e.target.value);
-  };
+    setInputText(e.target.value)
+  }
 
   const SubmitHandler = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     setTodos([
       ...todos,
       { text: inputText, completed: false, id: Math.random() * 1000 },
-    ]);
-    setInputText("");
-    console.log("Hey");
-  };
+    ])
+    setInputText("")
+    console.log("Hey")
+  }
 
-  const statusHandler = e => {
+  const statusHandler = (e) => {
     setStatus(e.target.value)
   }
 
   return (
-    <Container maxWidth="xs" >
+    <Container maxWidth="xs">
       <form onSubmit={SubmitHandler}>
         {!isAdmin && (
           <ButtonGroup>
@@ -46,7 +53,7 @@ const Form = ({ setInputText, setTodos, todos, inputText,setStatus,isAdmin,statu
         )}
       </form>
     </Container>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form
