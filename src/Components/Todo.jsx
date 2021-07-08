@@ -1,15 +1,23 @@
-import { Button, ButtonGroup, ListItem, makeStyles } from "@material-ui/core"
 import React from "react"
-import DeleteIcon from "@material-ui/icons/Delete"
-import Checkbox from "@material-ui/core/Checkbox"
-import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked"
-import CircleCheckedFilled from "@material-ui/icons/CheckCircle"
-import { Typography } from "@material-ui/core"
-import { Paper } from "@material-ui/core"
+import {
+  CircleUnchecked,
+  CircleCheckedFilled,
+  DeleteIcon,
+} from "@material-ui/icons"
+import {
+  Typography,
+  Paper,
+  Checkbox,
+  Button,
+  ButtonGroup,
+  ListItem,
+  makeStyles,
+} from "@material-ui/core"
+
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: 10,
-    backgroundColor:theme.palette.primary.light
+    backgroundColor: theme.palette.primary.light,
   },
   btn: {
     "&:active": {
@@ -19,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
   checkbox: {
     color: "green",
   },
-
 }))
 
 const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {

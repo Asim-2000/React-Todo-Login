@@ -1,7 +1,6 @@
-import { List, Container } from "@material-ui/core"
+import { List, Container, makeStyles } from "@material-ui/core"
 import React from "react"
 import Todo from "./Todo"
-import { makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
   root: {

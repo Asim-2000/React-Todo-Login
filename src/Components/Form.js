@@ -1,7 +1,12 @@
 import React from "react"
-import { TextField } from "@material-ui/core"
-import { ButtonGroup, Button, Select, MenuItem } from "@material-ui/core"
-import { Container } from "@material-ui/core"
+import {
+  ButtonGroup,
+  Button,
+  Select,
+  MenuItem,
+  Container,
+  TextField,
+} from "@material-ui/core"
 
 const Form = ({
   setInputText,
