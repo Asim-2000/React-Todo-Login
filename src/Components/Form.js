@@ -33,6 +33,7 @@ const Form = ({
   return (
     <Container maxWidth="xs">
       <form onSubmit={SubmitHandler}>
+        <ButtonGroup>
         {!isAdmin && (
           <ButtonGroup>
             <TextField
@@ -44,13 +45,15 @@ const Form = ({
             <Button className="todo-btn" type="submit">
               <i className="fa fa-plus-square"></i>
             </Button>
+            </ButtonGroup>
+        )}
             <Select onChange={statusHandler} value={status}>
               <MenuItem value="all">All</MenuItem>
               <MenuItem value="completed">Completed</MenuItem>
               <MenuItem value="incompleted">InCompelete</MenuItem>
             </Select>
           </ButtonGroup>
-        )}
+       
       </form>
     </Container>
   )
