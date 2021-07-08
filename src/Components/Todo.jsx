@@ -9,6 +9,7 @@ import { Paper } from "@material-ui/core"
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: 10,
+    backgroundColor:theme.palette.primary.light
   },
   btn: {
     "&:active": {
@@ -18,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   checkbox: {
     color: "green",
   },
+
 }))
 
 const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
@@ -41,7 +43,7 @@ const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
   }
 
   return (
-    <Paper className={classes.root}>
+    <Paper className={classes.root} variant="elevation" elevation={24}>
       <ListItem>
         {!isAdmin && (
           <ButtonGroup>
