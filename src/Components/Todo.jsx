@@ -5,7 +5,7 @@ import Checkbox from "@material-ui/core/Checkbox"
 import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked"
 import CircleCheckedFilled from "@material-ui/icons/CheckCircle"
 import { Typography } from "@material-ui/core"
-
+import { Paper } from "@material-ui/core"
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: 10,
@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
   },
   checkbox: {
     color: "green",
-  },
+  }
+  
 }))
 
 const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
@@ -41,24 +42,26 @@ const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
   }
 
   return (
-    <ListItem>
-      {!isAdmin && (
-        <ButtonGroup>
-          <Checkbox
-            className={classes.checkbox}
-            edge="start"
-            onChange={completeHandler}
-            checked={todo.completed}
-            icon={<CircleUnchecked />}
-            checkedIcon={<CircleCheckedFilled />}
-          />
-          <Button onClick={deleteHandler} className={classes.btn}>
-            <DeleteIcon />
-          </Button>
-        </ButtonGroup>
-      )}
-      <Typography className={classes.root}>{text}</Typography>
-    </ListItem>
+    <Paper className={classes.root}>
+      <ListItem>
+        {!isAdmin && (
+          <ButtonGroup>
+            <Checkbox
+              className={classes.checkbox}
+              edge="start"
+              onChange={completeHandler}
+              checked={todo.completed}
+              icon={<CircleUnchecked />}
+              checkedIcon={<CircleCheckedFilled />}
+            />
+            <Button onClick={deleteHandler} className={classes.btn}>
+              <DeleteIcon />
+            </Button>
+          </ButtonGroup>
+        )}
+        <Typography className={classes.root}>{text}</Typography>
+      </ListItem>
+    </Paper>
   )
 }
 
