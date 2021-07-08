@@ -1,9 +1,7 @@
 import React from "react"
-import {
-  CircleUnchecked,
-  CircleCheckedFilled,
-  DeleteIcon,
-} from "@material-ui/icons"
+import DeleteIcon from "@material-ui/icons/Delete"
+import CircleUnchecked from "@material-ui/icons/RadioButtonUnchecked"
+import CircleCheckedFilled from "@material-ui/icons/CheckCircle"
 import {
   Typography,
   Paper,

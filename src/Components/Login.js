@@ -6,6 +6,7 @@ import {
   TextField,
   Typography,
   Container,
+  Box,
 } from "@material-ui/core"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined"
 import { makeStyles } from "@material-ui/core/styles"
@@ -50,7 +51,7 @@ export default function Login({
       ) : (
         <Container maxWidth="xs">
           <CssBaseline />
-          <div className={classes.paper}>
+          <Box className={classes.paper}>
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
             </Avatar>
@@ -98,7 +99,7 @@ export default function Login({
                 </Alert>
               )}
             </form>
-          </div>
+          </Box>
         </Container>
       )}
     </>

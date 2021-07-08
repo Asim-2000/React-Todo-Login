@@ -45,9 +45,7 @@ export default function TodoPage({ isAdmin }) {
   //get local todos
 
   const getLocalTodos = () => {
-    if (localStorage.getItem("todos") === null) {
-      localStorage.setItem("todos", JSON.stringify([]))
-    } else {
+    if (localStorage.getItem("todos") !== null) {
       let todolocal = JSON.parse(localStorage.getItem("todos"))
       setTodos(todolocal)
     }

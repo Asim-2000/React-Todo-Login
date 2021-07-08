@@ -28,7 +28,6 @@ const Form = ({
       { text: inputText, completed: false, id: Math.random() * 1000 },
     ])
     setInputText("")
-    console.log("Hey")
   }
 
   const statusHandler = (e) => {
