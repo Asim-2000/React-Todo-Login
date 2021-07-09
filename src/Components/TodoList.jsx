@@ -2,7 +2,6 @@ import { List, Container, makeStyles } from "@material-ui/core"
 import React from "react"
 import { useContext } from "react"
 import { AdminContext } from "../context/adminContext"
-import { TodoContext } from "../context/todoContext"
 import Todo from "./Todo"
 
 const useStyles = makeStyles((theme) => ({
