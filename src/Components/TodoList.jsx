@@ -13,16 +13,17 @@ const TodoList = ({ setTodos, filteredTodos }) => {
   return (
     <Container maxWidth="xs">
       <List className={classes.root}>
-        {filteredTodos.map(
-          (todo) =>
-            todo.text.trim() !== "" && (
-              <Todo
-                key={todo.id}
-                text={todo.text}
-                setTodos={setTodos}
-                todo={todo}
-              />
-            )
+        {filteredTodos.map((todo) =>
+          todo.text.trim() !== "" ? (
+            <Todo
+              key={todo.id}
+              text={todo.text}
+              setTodos={setTodos}
+              todo={todo}
+            />
+          ) : (
+            <></>
+          )
         )}
       </List>
     </Container>
