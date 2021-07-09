@@ -4,9 +4,7 @@ import Header from "../Components/Header"
 import TodoList from "../Components/TodoList"
 import Form from "../Components/Form"
 
-export default function TodoPage({ isAdmin }) {
-  const [inputText, setInputText] = useState("")
-
+export default function Todos({ isAdmin }) {
   const [todos, setTodos] = useState([])
 
   const [status, setStatus] = useState("all")
@@ -57,10 +55,8 @@ export default function TodoPage({ isAdmin }) {
       <Form
         status={status}
         isAdmin={isAdmin}
-        inputText={inputText}
         todos={todos}
         setTodos={setTodos}
-        setInputText={setInputText}
         setStatus={setStatus}
       />
       <TodoList

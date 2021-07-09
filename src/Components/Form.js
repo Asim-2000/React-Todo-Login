@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
+import { BsFillPlusCircleFill } from "react-icons/bs"
 import {
   ButtonGroup,
   Button,
@@ -8,15 +9,9 @@ import {
   TextField,
 } from "@material-ui/core"
 
-const Form = ({
-  setInputText,
-  setTodos,
-  todos,
-  inputText,
-  setStatus,
-  isAdmin,
-  status,
-}) => {
+const Form = ({ setTodos, todos, setStatus, isAdmin, status }) => {
+  const [inputText, setInputText] = useState("")
+
   function inputTextHandler(e) {
     setInputText(e.target.value)
   }
@@ -46,8 +41,8 @@ const Form = ({
                 type="text"
                 variant="outlined"
               />
-              <Button className="todo-btn" type="submit">
-                <i className="fa fa-plus-square"></i>
+              <Button type="submit">
+                <BsFillPlusCircleFill />
               </Button>
             </ButtonGroup>
           )}

@@ -14,7 +14,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: 10,
+    margin: 12,
     backgroundColor: theme.palette.primary.light,
   },
   btn: {
@@ -50,7 +50,7 @@ const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
   return (
     <Paper className={classes.root} variant="elevation" elevation={24}>
       <ListItem>
-        {!isAdmin && (
+        {!isAdmin ? (
           <ButtonGroup>
             <Checkbox
               className={classes.checkbox}
@@ -64,6 +64,8 @@ const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
               <DeleteIcon />
             </Button>
           </ButtonGroup>
+        ) : (
+          <></>
         )}
         <Typography className={classes.root}>{text}</Typography>
       </ListItem>
