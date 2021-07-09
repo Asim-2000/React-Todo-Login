@@ -11,6 +11,8 @@ import {
   ListItem,
   makeStyles,
 } from "@material-ui/core"
+import { useContext } from "react"
+import { AdminContext } from "../context/adminContext"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,8 +29,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Todo = ({ text, todo, todos, setTodos, isAdmin }) => {
+const Todo = ({ text, todo, todos, setTodos }) => {
   const classes = useStyles()
+  const isAdmin = useContext(AdminContext)
+
   function deleteHandler() {
     setTodos(todos.filter((el) => el.id !== todo.id))
   }

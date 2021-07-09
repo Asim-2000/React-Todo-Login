@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { BsFillPlusCircleFill } from "react-icons/bs"
 import {
   ButtonGroup,
@@ -8,8 +8,10 @@ import {
   Container,
   TextField,
 } from "@material-ui/core"
+import { AdminContext } from "../context/adminContext"
 
-const Form = ({ setTodos, todos, setStatus, isAdmin, status }) => {
+const Form = ({ setTodos, todos, setStatus, status }) => {
+  const isAdmin = useContext(AdminContext)
   const [inputText, setInputText] = useState("")
 
   function inputTextHandler(e) {

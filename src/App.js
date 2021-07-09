@@ -4,23 +4,26 @@ import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./theme/theme"
 import Login from "./Components/Login"
 import Todos from "./pages/Todos"
+import { AdminContext } from "./context/adminContext"
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
 
   return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            <Login isAdmin={isAdmin} setIsAdmin={setIsAdmin} />
-          </Route>
-          <Route path="/todo">
-            <Todos isAdmin={isAdmin} />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </ThemeProvider>
+    <AdminContext.Provider value={isAdmin}>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <Login setIsAdmin={setIsAdmin} />
+            </Route>
+            <Route path="/todo">
+              <Todos />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </ThemeProvider>
+    </AdminContext.Provider>
   )
 }
 
