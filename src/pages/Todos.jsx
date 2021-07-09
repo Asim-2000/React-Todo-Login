@@ -55,11 +55,7 @@ export default function Todos({ isAdmin }) {
       <Box>
         <Header />
         <Form status={status} setTodos={setTodos} setStatus={setStatus} />
-        <TodoList
-          isAdmin={isAdmin}
-          setTodos={setTodos}
-          filteredTodos={filteredTodos}
-        />
+        <TodoList setTodos={setTodos} filteredTodos={filteredTodos} />
       </Box>
     </TodoContext.Provider>
   )
