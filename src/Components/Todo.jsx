@@ -20,13 +20,11 @@ const useStyles = makeStyles((theme) => ({
     margin: 12,
     backgroundColor: theme.palette.primary.light,
   },
-  btn: {
-    "&:active": {
-      backgroundColor: theme.palette.secondary.light,
-    },
+  delete: {
+    color: theme.palette.secondary.main,
   },
   checkbox: {
-    color: "green",
+    color: theme.palette.success.main,
   },
 }))
 
@@ -66,8 +64,8 @@ const Todo = ({ text, todo, setTodos }) => {
               icon={<CircleUnchecked />}
               checkedIcon={<CircleCheckedFilled />}
             />
-            <Button onClick={deleteHandler} className={classes.btn}>
-              <DeleteIcon />
+            <Button onClick={deleteHandler}>
+              <DeleteIcon className={classes.delete} />
             </Button>
           </ButtonGroup>
         ) : (
