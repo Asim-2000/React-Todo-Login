@@ -3,6 +3,7 @@ import { Box } from "@material-ui/core"
 import Header from "../Components/Header"
 import TodoList from "../Components/TodoList"
 import Form from "../Components/Form"
+import { TodoContext } from "../context/todoContext"
 
 export default function Todos({ isAdmin }) {
   const [todos, setTodos] = useState([])
@@ -50,21 +51,21 @@ export default function Todos({ isAdmin }) {
   }
 
   return (
-    <Box>
-      <Header />
-      <Form
-        status={status}
-        isAdmin={isAdmin}
-        todos={todos}
-        setTodos={setTodos}
-        setStatus={setStatus}
-      />
-      <TodoList
-        isAdmin={isAdmin}
-        todos={todos}
-        setTodos={setTodos}
-        filteredTodos={filteredTodos}
-      />
-    </Box>
+    <TodoContext.Provider value={todos}>
+      <Box>
+        <Header />
+        <Form
+          status={status}
+          isAdmin={isAdmin}
+          setTodos={setTodos}
+          setStatus={setStatus}
+        />
+        <TodoList
+          isAdmin={isAdmin}
+          setTodos={setTodos}
+          filteredTodos={filteredTodos}
+        />
+      </Box>
+    </TodoContext.Provider>
   )
 }

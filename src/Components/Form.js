@@ -9,10 +9,12 @@ import {
   TextField,
 } from "@material-ui/core"
 import { AdminContext } from "../context/adminContext"
+import { TodoContext } from "../context/todoContext"
 
-const Form = ({ setTodos, todos, setStatus, status }) => {
+const Form = ({ setTodos, setStatus, status }) => {
   const isAdmin = useContext(AdminContext)
   const [inputText, setInputText] = useState("")
+  const todos = useContext(TodoContext)
 
   function inputTextHandler(e) {
     setInputText(e.target.value)

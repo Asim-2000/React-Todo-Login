@@ -1,5 +1,6 @@
 import { Button, Grid, Typography, makeStyles } from "@material-ui/core"
 import React from "react"
+import { Link } from "react-router-dom"
 
 const useStyles = makeStyles({
   btn: {
@@ -8,6 +9,9 @@ const useStyles = makeStyles({
   },
   heading: {
     paddingLeft: 20,
+  },
+  link: {
+    textDecoration: "none",
   },
 })
 
@@ -21,15 +25,16 @@ const Header = () => {
           variant="h4"
           color="textSecondary"
         >
-          {" "}
           ToDo List
         </Typography>
       </Grid>
 
       <Grid className={classes.btn} item xs={6}>
-        <Button href="/" variant="contained" size="small" color="secondary">
-          Logout
-        </Button>
+        <Link className={classes.link} to="/">
+          <Button variant="contained" size="small" color="secondary">
+            Logout
+          </Button>
+        </Link>
       </Grid>
     </Grid>
   )
