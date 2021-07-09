@@ -5,7 +5,7 @@ import TodoList from "../Components/TodoList"
 import Form from "../Components/Form"
 import { TodoContext } from "../context/todoContext"
 
-export default function Todos({ isAdmin }) {
+export default function Todos() {
   const [todos, setTodos] = useState([])
 
   const [status, setStatus] = useState("all")
@@ -34,7 +34,6 @@ export default function Todos({ isAdmin }) {
         break
     }
   }
-
   //save to localStorage
 
   function saveLocalTodos() {

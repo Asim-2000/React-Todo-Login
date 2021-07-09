@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./theme/theme"
-import Login from "./Components/Login"
+import Login from "./pages/Login"
 import Todos from "./pages/Todos"
 import { AdminContext } from "./context/adminContext"
 
