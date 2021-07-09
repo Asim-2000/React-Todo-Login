@@ -6,7 +6,7 @@ import {
   TextField,
   Typography,
   Container,
-  Box,
+  Grid,
 } from "@material-ui/core"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined"
 import { makeStyles } from "@material-ui/core/styles"
@@ -86,7 +86,7 @@ export default function Login({ setIsAdmin }) {
       ) : (
         <Container maxWidth="xs">
           <CssBaseline />
-          <Box className={classes.paper}>
+          <Grid className={classes.paper}>
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
             </Avatar>
@@ -136,7 +136,7 @@ export default function Login({ setIsAdmin }) {
                 <></>
               )}
             </form>
-          </Box>
+          </Grid>
         </Container>
       )}
     </>
