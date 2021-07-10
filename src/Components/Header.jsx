@@ -1,4 +1,4 @@
-import { Button, Grid, Typography, makeStyles } from "@material-ui/core"
+import { Button, Grid, Typography, makeStyles, Box } from "@material-ui/core"
 import React from "react"
 import { Link } from "react-router-dom"
 
@@ -18,8 +18,8 @@ const useStyles = makeStyles({
 const Header = () => {
   const classes = useStyles()
   return (
-    <Grid container direction="row" alignItems="center">
-      <Grid item xs={6}>
+    <Box display="flex" justifyContent="space-between" alignItems="center">
+      <Box>
         <Typography
           className={classes.heading}
           variant="h4"
@@ -27,16 +27,16 @@ const Header = () => {
         >
           ToDo List
         </Typography>
-      </Grid>
+      </Box>
 
-      <Grid className={classes.btn} item xs={6}>
+      <Box mr="10px">
         <Link className={classes.link} to="/">
           <Button variant="contained" size="small" color="secondary">
             Logout
           </Button>
         </Link>
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   )
 }
 
