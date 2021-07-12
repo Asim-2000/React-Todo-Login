@@ -1,4 +1,4 @@
-import { Button, Grid, Typography, makeStyles, Box } from "@material-ui/core"
+import { Button, Typography, makeStyles, Box } from "@material-ui/core"
 import React from "react"
 import { Link } from "react-router-dom"
 

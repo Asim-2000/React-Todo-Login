@@ -4,7 +4,6 @@ import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./theme/theme"
 import Login from "./pages/Login"
 import Todos from "./pages/Todos"
-// import { AdminProvider } from "./context/adminContext"
 import { AdminContainer } from "./container/AdminContainer"
 
 function App() {
