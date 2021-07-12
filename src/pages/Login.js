@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import {
   Avatar,
   Button,
@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined"
 import { makeStyles } from "@material-ui/core/styles"
 import { Alert } from "@material-ui/lab"
 import { Redirect } from "react-router"
+import { AdminContext } from "../context/adminContext"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -33,13 +34,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Login({ setIsAdmin }) {
+export default function Login() {
   const classes = useStyles()
   const [inputName, setInputName] = useState("")
   const [inputpassword, setinputpassword] = useState("")
   const [redirect, setRedirect] = useState(false)
   const [alert, setAlert] = useState(false)
-
+  const { setIsAdmin } = useContext(AdminContext)
   function userLogin() {
     if (inputName === "asim" && inputpassword === "asim") {
       return true

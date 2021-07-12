@@ -12,7 +12,7 @@ import { AdminContext } from "../context/adminContext"
 import { TodoContext } from "../context/todoContext"
 
 const Form = ({ setTodos, setStatus, status }) => {
-  const isAdmin = useContext(AdminContext)
+  const { isAdmin } = useContext(AdminContext)
   const [inputText, setInputText] = useState("")
   const todos = useContext(TodoContext)
 

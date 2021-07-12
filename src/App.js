@@ -1,21 +1,20 @@
-import React, { useState } from "react"
+import React from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import { ThemeProvider } from "@material-ui/core"
 import { theme } from "./theme/theme"
 import Login from "./pages/Login"
 import Todos from "./pages/Todos"
-import { AdminContext } from "./context/adminContext"
+// import { AdminProvider } from "./context/adminContext"
+import { AdminContainer } from "./container/AdminContainer"
 
 function App() {
-  const [isAdmin, setIsAdmin] = useState(false)
-
   return (
-    <AdminContext.Provider value={isAdmin}>
+    <AdminContainer>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Switch>
             <Route exact path="/">
-              <Login setIsAdmin={setIsAdmin} />
+              <Login />
             </Route>
             <Route path="/todo">
               <Todos />
@@ -23,7 +22,7 @@ function App() {
           </Switch>
         </BrowserRouter>
       </ThemeProvider>
-    </AdminContext.Provider>
+    </AdminContainer>
   )
 }
 

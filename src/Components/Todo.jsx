@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Todo = ({ text, todo, setTodos }) => {
   const classes = useStyles()
-  const isAdmin = useContext(AdminContext)
+  const { isAdmin } = useContext(AdminContext)
   const todos = useContext(TodoContext)
 
   function deleteHandler() {
