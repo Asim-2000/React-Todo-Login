@@ -9,13 +9,13 @@ import {
   Button,
   ButtonGroup,
   ListItem,
-  makeStyles,
+  withStyles,
 } from "@material-ui/core"
 import { useContext } from "react"
 import { AdminContext } from "../context/adminContext"
 import { TodoContext } from "../context/todoContext"
 
-const useStyles = makeStyles((theme) => ({
+const styles = (theme) => ({
   root: {
     margin: 12,
     backgroundColor: theme.palette.primary.light,
@@ -26,10 +26,9 @@ const useStyles = makeStyles((theme) => ({
   checkbox: {
     color: theme.palette.success.main,
   },
-}))
+})
 
-const Todo = ({ text, todo, setTodos }) => {
-  const classes = useStyles()
+const Todo = ({ text, todo, setTodos, classes }) => {
   const { isAdmin } = useContext(AdminContext)
   const todos = useContext(TodoContext)
 
@@ -77,4 +76,4 @@ const Todo = ({ text, todo, setTodos }) => {
   )
 }
 
-export default Todo
+export default withStyles(styles)(Todo)

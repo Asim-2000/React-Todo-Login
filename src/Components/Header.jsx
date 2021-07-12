@@ -1,8 +1,8 @@
-import { Button, Typography, makeStyles, Box } from "@material-ui/core"
+import { Button, Typography, Box, withStyles } from "@material-ui/core"
 import React from "react"
 import { Link } from "react-router-dom"
 
-const useStyles = makeStyles({
+const styles = (theme) => ({
   btn: {
     textAlign: "right",
     paddingRight: 20,
@@ -15,8 +15,7 @@ const useStyles = makeStyles({
   },
 })
 
-const Header = () => {
-  const classes = useStyles()
+const Header = ({ classes }) => {
   return (
     <Box display="flex" justifyContent="space-between" alignItems="center">
       <Box>
@@ -40,4 +39,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default withStyles(styles)(Header)

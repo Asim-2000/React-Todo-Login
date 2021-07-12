@@ -6,15 +6,15 @@ import {
   TextField,
   Typography,
   Container,
+  withStyles,
   Grid,
 } from "@material-ui/core"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined"
-import { makeStyles } from "@material-ui/core/styles"
 import { Alert } from "@material-ui/lab"
 import { Redirect } from "react-router"
 import { AdminContext } from "../context/adminContext"
 
-const useStyles = makeStyles((theme) => ({
+const styles = (theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
@@ -32,10 +32,8 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-}))
-
-export default function Login() {
-  const classes = useStyles()
+})
+const Login = ({ classes }) => {
   const [inputName, setInputName] = useState("")
   const [inputpassword, setinputpassword] = useState("")
   const [redirect, setRedirect] = useState(false)
@@ -143,3 +141,5 @@ export default function Login() {
     </>
   )
 }
+
+export default withStyles(styles)(Login)

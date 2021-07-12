@@ -1,15 +1,14 @@
-import { List, Container, makeStyles } from "@material-ui/core"
+import { List, Container, withStyles } from "@material-ui/core"
 import React from "react"
 import Todo from "./Todo"
 
-const useStyles = makeStyles((theme) => ({
+const styles = (theme) => ({
   root: {
     width: "100%",
   },
-}))
+})
 
-const TodoList = ({ setTodos, filteredTodos }) => {
-  const classes = useStyles()
+const TodoList = ({ setTodos, filteredTodos, classes }) => {
   return (
     <Container maxWidth="xs">
       <List className={classes.root}>
@@ -30,4 +29,4 @@ const TodoList = ({ setTodos, filteredTodos }) => {
   )
 }
 
-export default TodoList
+export default withStyles(styles)(TodoList)
