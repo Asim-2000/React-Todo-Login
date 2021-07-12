@@ -12,12 +12,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/">
-              <Login />
-            </Route>
-            <Route path="/todo">
-              <Todos />
-            </Route>
+            <Route exact path="/" component={Login}></Route>
+            <Route path="/todo" component={Todos}></Route>
           </Switch>
         </BrowserRouter>
       </ThemeProvider>
