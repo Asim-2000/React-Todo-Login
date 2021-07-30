@@ -1,28 +1,32 @@
-import React from "react";
-import Todo from "./Todo";
+import { List, Container, withStyles } from "@material-ui/core"
+import React from "react"
+import Todo from "./Todo"
 
-const TodoList = ({ todos, setTodos, filteredTodos,isAdmin}) => {
-  console.log(todos);
+const styles = (theme) => ({
+  root: {
+    width: "100%",
+  },
+})
 
+const TodoList = ({ setTodos, filteredTodos, classes }) => {
   return (
-    <div className="todo-container">
-      <ul className="todo-list">
-        {
-          (filteredTodos.map((todo) => (
-              todo.text.trim()!==""&&
-              <Todo
-              isAdmin={isAdmin}
+    <Container maxWidth="xs">
+      <List className={classes.root}>
+        {filteredTodos.map((todo) =>
+          todo.text.trim() !== "" ? (
+            <Todo
               key={todo.id}
               text={todo.text}
-              todos={todos}
               setTodos={setTodos}
               todo={todo}
             />
-          )))
-        }
-      </ul>
-    </div>
-  );
-};
+          ) : (
+            <></>
+          )
+        )}
+      </List>
+    </Container>
+  )
+}
 
-export default TodoList;
+export default withStyles(styles)(TodoList)

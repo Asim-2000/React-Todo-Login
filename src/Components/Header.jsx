@@ -1,23 +1,42 @@
-import React from 'react'
-import { Link } from "react-router-dom";
-import { withRouter } from "react-router";
-const Header = () => {
+import { Button, Typography, Box, withStyles } from "@material-ui/core"
+import React from "react"
+import { Link } from "react-router-dom"
 
+const styles = (theme) => ({
+  btn: {
+    textAlign: "right",
+    paddingRight: 20,
+  },
+  heading: {
+    paddingLeft: 20,
+  },
+  link: {
+    textDecoration: "none",
+  },
+})
 
-    return (
-          <div className="container">
-            <div className="row">
-              <div className="col-md-10 ">
-                <h1 className="header text-right"> Asim's ToDo List</h1>
-              </div>
-                <div className="col-md-2 pt-5">
-                <Link to="/" className="btn btn-danger">
-                  Logout
-                </Link>
-              </div>
-            </div>
-          </div>
-    );
+const Header = ({ classes }) => {
+  return (
+    <Box display="flex" justifyContent="space-between" alignItems="center">
+      <Box>
+        <Typography
+          className={classes.heading}
+          variant="h4"
+          color="textSecondary"
+        >
+          ToDo List
+        </Typography>
+      </Box>
+
+      <Box mr="10px">
+        <Link className={classes.link} to="/">
+          <Button variant="contained" size="small" color="secondary">
+            Logout
+          </Button>
+        </Link>
+      </Box>
+    </Box>
+  )
 }
 
-export default withRouter(Header);
+export default withStyles(styles)(Header)
